@@ -12,7 +12,7 @@ Rails.application.routes.draw do
 
   # Defines the root path route ("/")
 
-  get "/blog_posts/new", to: "blog_posts#new", as: :blog_post_new
+  get "/blog_posts/new", to: "blog_posts#new", as: :new_blog_post
   get "/blog_posts/:id", to: "blog_posts#show", as: :blog_post
   patch "/blog_posts/:id", to: "blog_posts#update"
   delete "/blog_posts/:id", to: "blog_posts#destroy"
