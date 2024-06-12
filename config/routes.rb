@@ -11,13 +11,13 @@ Rails.application.routes.draw do
   # get "manifest" => "rails/pwa#manifest", as: :pwa_manifest
 
   # Defines the root path route ("/")
-  get "my_blogs", to: "blog_posts#my_blogs", as: :my_blogs
+  get "/my_blogs", to: "blog_posts#my_blogs", as: :my_blogs
   get "/blog_posts/new", to: "blog_posts#new", as: :new_blog_post
   get "/blog_posts/:id", to: "blog_posts#show", as: :blog_post
   patch "/blog_posts/:id", to: "blog_posts#update"
   delete "/blog_posts/:id", to: "blog_posts#destroy"
   get "/blog_posts/:id/edit", to: "blog_posts#edit", as: :blog_post_edit
-  post "blog_posts", to: "blog_posts#create", as: :blog_posts
+  post "/blog_posts", to: "blog_posts#create", as: :blog_posts
 
   root "blog_posts#index"
 end
