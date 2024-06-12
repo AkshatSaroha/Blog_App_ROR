@@ -1,9 +1,13 @@
-<h1>My Blogs</h1>
-
-<% @blog_posts.each do |blog_post| %>
-    <div>
-        <h2><%# link_to blog_post.title, "/blog_posts/#{blog_post.id}" %></h2>
-        <h2><%= link_to blog_post.title, blog_post %></h2>
-        <%= blog_post.body %>
+<div class="flex justify-center ">
+    <div class="max-w-3xl ">
+      <h1 class="text-center mb-8">GyanDhan Blogs</h1>
+      <% @blog_posts.each do |blog_post| %>
+        <div class="prose mb-8 bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4">
+          <h2 class="text-left">
+            <%= link_to blog_post.title, blog_post %>
+          </h2>
+          <%= blog_post.body %>
+        </div>
+      <% end %>
     </div>
-<% end %>
+  </div>

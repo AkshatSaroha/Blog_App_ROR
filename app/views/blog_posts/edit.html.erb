@@ -1,29 +1,29 @@
-<h1>Edit Blog Post</h1>
+<h1 class="text-3xl font-bold text-center mb-6">Edit Blog Post</h1>
 
-<%= form_with model: @blog_post do |form| %>
-  <div>
-    <%= form.label :title %><br>
-    <%= form.text_field :title %>
-    <% @blog_post.errors.full_messages_for(:title).each do |message| %>
-      <div><%= message %></div>
-    <% end %>
-  </div>
+<div class="max-w-md mx-auto bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4">
+  <%= form_with model: @blog_post, class: "space-y-4" do |form| %>
+    <div>
+      <%= form.label :title, class: "block text-gray-700 font-bold mb-2" %>
+      <%= form.text_field :title, class: "shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" %>
+      <% @blog_post.errors.full_messages_for(:title).each do |message| %>
+        <div class="text-red-500 text-sm italic"><%= message %></div>
+      <% end %>
+    </div>
 
-  <div>
-    <%= form.label :body %><br>
-    <%= form.text_area :body %>
-    <% @blog_post.errors.full_messages_for(:body).each do |message| %>
-      <div><%= message %></div>
-    <% end %>
-  </div>
+    <div>
+      <%= form.label :body, class: "block text-gray-700 font-bold mb-2" %>
+      <%= form.text_area :body, class: "shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" %>
+      <% @blog_post.errors.full_messages_for(:body).each do |message| %>
+        <div class="text-red-500 text-sm italic"><%= message %></div>
+      <% end %>
+    </div>
 
-  <div>
-    <%= form.submit %>
-  </div>
+    <div class="flex justify-center">
+      <%= form.submit "Update", class: "bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline" %>
+    </div>
+  <% end %>
+</div>
 
-  <div>
-    
-  </div>
-<% end %>
-
-<%= button_to "Delete", @blog_post, method: :delete, data: { turbo_method: :delete, turbo_confirm: "Are you sure?" } %>
+<div class="text-center mt-4">
+  <%= button_to "Delete", @blog_post, method: :delete, data: { turbo_method: :delete, turbo_confirm: "Are you sure?" }, class: "bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline" %>
+</div>
