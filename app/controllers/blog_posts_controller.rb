@@ -39,6 +39,10 @@ class BlogPostsController < ApplicationController
       redirect_to root_path
     end
 
+    def my_blogs
+      @blog_posts = current_user.blog_posts
+    end
+
     private
 
     def set_blog_post

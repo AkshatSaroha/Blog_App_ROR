@@ -10,6 +10,7 @@
             <%= button_to "Home", root_path, method: :get, class: "rounded-md px-3 py-2 text-l font-bold text-gray-300 hover:bg-gray-700 hover:text-white" %>
             <% if user_signed_in? %>
               <%= button_to "Add a blog", new_blog_post_path, method: :get, class: "rounded-md px-3 py-2 text-l font-bold text-gray-300 hover:bg-gray-700 hover:text-white" %>
+              <%= button_to "My blogs", my_blogs_path, method: :get, class: "rounded-md px-3 py-2 text-l font-bold text-gray-300 hover:bg-gray-700 hover:text-white" %>
               <%= button_to "Profile", edit_user_registration_path, method: :get, class: "rounded-md px-3 py-2 text-l font-bold text-gray-300 hover:bg-gray-700 hover:text-white" %>
               <%= button_to "Logout", destroy_user_session_path, method: :delete, class: "rounded-md px-3 py-2 text-l font-bold text-gray-300 hover:bg-gray-700 hover:text-white" %>
             <% else %>
