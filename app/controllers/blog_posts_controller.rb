@@ -4,7 +4,11 @@ class BlogPostsController < ApplicationController
     before_action :authorize_user!, only: [ :edit, :update, :destroy ]
 
     def index
-      @blog_posts = BlogPost.all
+      if params[:search].present?
+        @blog_posts = BlogPost.where("title LIKE ?", "%#{params[:search]}%")
+      else
+        @blog_posts = BlogPost.all
+      end
     end
 
     def show
